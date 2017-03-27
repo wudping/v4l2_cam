@@ -4,6 +4,18 @@ language: c
 compiler: gcc
 os: linux
 
+env:
+  global:
+  - secure: E6HHMw0S9Lz/U6vk9fFO788/oW1/buoRa8GWwBUakhQQPQfLYWxxLbiZCaj6SLwzjwg0unwTsPPzhqSSujMX4nsc3Otl4EREd8ikz/T7PS2g4HGYeL9lhOaa6JBlPfJkVkmHOSn4gueNWujnUsCB/kqUVZh7E4ZOe9du7mZRWS349Eg0ZZWL54G6//wKHZ5AamEjCTvmlYF26hguyGYCIumM9WcKFL55IdcOGdQ7TJuVtenH/SxN3tFXnMzqkOs3xihFaJYkIwAE5eVg+QfRDckddlMZnpeAVnQSbWQMEXO5v3idKdRAE+XeaH/7Pv2f7ar5KhqAPU/Mo53htC6rpDHpKDkhEhDPu+FEDEk3nqoWtUlxT6MFLnCff5N3F50H9lJDaLDCGFlntdemk+VhrgV0vdra2G6/SwGfrQbY84yKe8BJZNT9rybMxWA7m38pR5Sth99gdPWGWdJGlMaOyB3/JBSYdYaGaubaM8ANihm5eRrWXPhh+kHKslU0E/XEXURYdsIWnnWN2dZql1lde/fneCoqYTx3yiq2EM4YuhgoWzXDf/E2gjSRkcg6849wbTM1fDa6U4oAf3IgVfMdhS7nIu3//DXH6VRUoSSqNHqRBqwfPUo/RMDVlpX/oSnFSwfY9sRBHs4AWLRXHPE8SIFtAErtEoiwLwLdIOAbIso=
+addons:
+  coverity_scan:
+    project: v4l2_cam
+      name: v4l2_cam
+      description: v4l2 camera
+    notification_email: ""
+    build_command_prepend: ''
+    build_command: make -j8
+    branch_pattern: coverity_scan
 
 #script: if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then make ; fi
 script: make -j8
